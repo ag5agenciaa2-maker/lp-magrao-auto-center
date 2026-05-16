@@ -1,0 +1,285 @@
+Quero que você crie o Site institucional "Vermelho Mecânico Bold" em 3 arquivos (index.html, style.css e script.js), usando APENAS HTML5 semântico, CSS3 (Flexbox, Grid, variáveis CSS) e JavaScript Vanilla ES6, sem qualquer framework ou biblioteca externa.
+REGRA: Use imagens genéricas premium (Unsplash) relacionadas ao nicho caso não haja imagens reais. Inclua URLs diretas das imagens.
+IDENTIDADE VISUAL BASE:
+Paleta: #C41230 (vermelho principal) / #1A1A1A (preto carvão) / #2E2E2E (grafite) / #F5F5F5 (off-white) / #F0A500 (âmbar acento)
+Tipografia: Barlow Condensed (títulos bold, 700–900) + Inter (corpo, 400–500)
+Estilo: Mecânico urbano bold — galpão industrial que acolhe, sem ser pesado; vermelho enérgico com preto e off-white limpo
+Sensação: Força, Confiança, Acolhimento, Transparência — "aqui te tratam como gente"
+LAYOUT ESCOLHIDO:
+Hero: D) Vídeo loop em fullscreen com overlay escuro gradiente + máscara de cor vermelha na lateral esquerda, texto em Barlow Condensed 9vw à esquerda, subtext e 2 CTAs empilhados
+Serviços: F) Numeração grande (01, 02, 03…) como elemento visual dominante — cada serviço principal com número em 8rem vermelho semitransparente, ícone SVG e descrição curta ao lado
+Depoimentos: A) Marquee infinito horizontal — cards de avaliação Google deslizando continuamente, com estrelas e nota 4.4 visível e logo do Google
+Sobre/Credenciais: D) Split 50/50 — foto da equipe (fachada com equipe) fixada à esquerda, texto narrativo da história + counters animados à direita
+ANIMAÇÕES DO PROJETO:
+
+Logo nav → opacidade 0 para 1 em 400ms, easing: ease-out, trigger: load
+Texto hero H1 → translateY(40px) para translateY(0) + opacidade 0→1 em 700ms, easing: cubic-bezier(0.16,1,0.3,1), trigger: load, delay 200ms
+Subtexto hero → translateY(30px) para translateY(0) em 600ms, easing: ease-out, trigger: load, delay 450ms
+Botões CTA hero → translateY(20px) para translateY(0) em 500ms, trigger: load, stagger: 150ms entre os dois
+Cards de serviço → translateX(-30px) + opacidade 0 para estado final em 500ms, easing: ease-out, trigger: IntersectionObserver (threshold 0.2), stagger: 120ms
+Número grande do serviço → scale(1.1) para scale(1) em 600ms, trigger: IntersectionObserver
+Counters sobre → 0 até valor final em 1800ms, easing: ease-in-out, trigger: IntersectionObserver
+Cards depoimento marquee → translateX loop infinito -100% em 30s linear, pausa em hover
+Seção dor/solução → fade-in + slide da esquerda 40px em 500ms por bloco, stagger 100ms, trigger: IntersectionObserver
+Barra animada horizontal de serviços → translateX loop infinito, velocidade 20s, trigger: load
+Foto split sobre → parallax sutil translateY(-20px) ao scroll (via IntersectionObserver com ratio)
+
+SEÇÕES OBRIGATÓRIAS:
+Navbar — Logo Magrão à esquerda, links à direita, fundo transparente que transiciona para #1A1A1A com scroll; CTA "Agendar no WhatsApp" em vermelho
+Hero — Vídeo loop de fundo (ambiente da oficina) + overlay gradiente diagonal; headline em Barlow Condensed; credenciais rápidas (17 anos / 327 avaliações / Atendimento por mulheres)
+Seção de alto impacto: dor e solução — "Você já foi a uma oficina e saiu com mais dúvidas do que entrou?" — blocos de dor à esquerda vs. solução Magrão à direita, fundo grafite
+Serviços — modelo F (numeração 01–08) com serviços principais: Alinhamento 3D, Balanceamento, Troca de Óleo, Embreagem, Pneus, Suspensão, Escapamento, Fluido do Câmbio
+Seção de encantamento com imagens — galeria mosaico com fotos reais do espaço (fachada, recepção feminina, produtos na prateleira, equipe) + barra animada horizontal com os bairros atendidos
+Sobre/Credenciais — modelo D Split 50/50 com foto da equipe; narrativa da história de Cláudia, contadores: +17 anos / 327 avaliações / Equipe especializada / +25 serviços
+Depoimentos — Marquee infinito horizontal com cards do Google; nota 4.4 ⭐ com logo Google; link "Ver todas as avaliações" para o perfil Google
+FAQ — 6 perguntas frequentes em acordeão (ex: "Vocês atendem caminhões?", "Precisa agendar?", "Aceitam cartão?", "Qual a garantia dos serviços?")
+Localização — endereço completo + iframe Google Maps + botão "Como Chegar" + iframe Tour Virtual Google + horários + contatos
+CTA com formulário ao lado — "Agende sua visita" formulário (nome, telefone, serviço desejado, mensagem) + CTA WhatsApp
+Rodapé + Créditos — 3 colunas: Sobre / Serviços / Contato; todos os links clicáveis com ícones
+RODAPÉ — coluna de contato (com ícones, todos clicáveis):
+Nome → link Google Business: https://share.google/ftbJvimRiAIhSMimZ
+Endereço → link Google Maps: Estr. Rio São Paulo, 1634 - Campo Grande, RJ
+Telefone: (21) 2413-4577
+WhatsApp: (21) 99419-8051
+Instagram: @magraoautocenterrj → https://www.instagram.com/magraoautocenterrj/
+Facebook: https://www.facebook.com/magraoautocenterrj/
+CRÉDITOS:
+Esquerda: © Magrão Auto Center 2026
+Direita: Desenvolvido por AG5 Agência (AG5 em destaque na cor #C41230, link para www.ag5agencia.com.br)
+DIRETRIZES ANTI-GENÉRICO:
+
+Sem hero centralizado com fundo escuro e texto branco genérico
+Sem fade-up igual em todas as seções
+Sem paleta azul + branco + cinza
+Sem 3 colunas de ícone + título + texto
+
+QUALIDADE DE CÓDIGO:
+HTML semântico + IDs de ancoragem em todas as seções; Variáveis CSS no :root; Mobile-first com media queries; IntersectionObserver para animações de scroll; will-change: transform, @media (prefers-reduced-motion), lazy loading; Formulário com validação real
+OPCIONAL ATIVO (faz sentido para o nicho):
+✅ Barra animada horizontal: nome / serviços / bairros de atendimento
+✅ Seção de avaliações Google com logo oficial e cards animados em marquee
+
+1 — MÍDIAS PRINCIPAIS
+ItemStatusDetalheFoto da fachada✅ Presente2 ângulos distintos — frente com letreiro vermelho MAGRÃO + equipe posando; outro ângulo com carros dentroFotos internas✅ PresenteRecepção com 4 atendentes mulheres, carros nos elevadores ao fundo; prateleiras com óleos Havoline Motor Oil 10W-40 e Havoline ATF fluido de transmissãoFotos da equipe✅ PresenteEquipe completa (~8 pessoas) posando na entrada da fachadaFotos dos proprietários⚠️ ParcialProprietária (Cláudia) aparece junto à equipe mas sem foto individual/institucional destacadaLogo✅ PresenteArquivo .webp com silhueta de carro + texto MAGRÃO em grafite e vermelhoPrint Instagram✅ PresenteFeed do @magraoautocenterrj mostrando identidade visual, conteúdo e alcanceVídeos✅ Presentes3 vídeos enviados (produtos, equipamentos e ambiente); total declarado: 24 vídeos
+
+2 — INFORMAÇÕES DA EMPRESA
+Nome: Magrão Auto Center
+CNPJ: 08.040.219/0001-26
+Nicho: Oficina Mecânica / Auto Center
+Abertura: 17/05/2006 (19 anos de mercado)
+Descrição institucional:
+Oficina mecânica completa com atendimento diferenciado — equipe formada majoritariamente por mulheres na recepção, criando ambiente acolhedor especialmente para o público feminino. Compromisso com excelência técnica, transparência e construção de relações de confiança duradouras.
+Proposta de valor: "Mais do que serviço técnico — uma oficina onde você é tratado com respeito, transparência e cuidado genuíno."
+Público-alvo: Motoristas da Zona Oeste do Rio de Janeiro (Campo Grande e entorno), com destaque para mulheres motoristas que se sentem desconfortáveis em oficinas tradicionais.
+Principais serviços (Top 5 declarados):
+
+Alinhamento (3D)
+Balanceamento de rodas
+Troca de óleo
+Fluido do câmbio
+Pneus
+
+Lista completa de serviços:
+Escapamento, Troca do fluido do câmbio, Embreagem, Correias, Alinhamento de pneus, Radiador, Líquido do arrefecimento, Caixa de direção, Balanceamento das rodas, Atendimento a caminhões, Centro de serviços automotivos, Diagnóstico de motor veicular, Freios, Lubrificantes, Pneus, Reparo de suspensão e direção, Reparos e manutenção em geral, Reparos em vela, Reparos no amortecedor, Troca de filtro de ar-condicionado, Troca de filtro de cabine e de ar, Alinhamento de van/Kia Bongo/caminhonete, Desempeno de aro, Limpeza de bico, Pintura de roda, Reforma de aro, Suspensão de Sprinter
+Diferenciais declarados:
+
+Equipe de atendimento formada por mulheres
+Ambiente acolhedor e seguro para mulheres
+Transparência total no orçamento
+Mecânicos que explicam o serviço ao cliente
++19 anos no mercado
+Atualização constante de equipamentos
+Atende caminhões, vans, caminhonetes e Sprinter
+
+História: Início inesperado — recebeu uma recapadora de pneus via troca quando o marido de um amigo retornou à sua cidade natal. Cláudia era professora da rede estadual e topou o desafio. Investiu em equipamentos novos, pneus e peças. Filhos cresceram e seguiram outros caminhos. Cláudia deixou a carreira docente para se dedicar integralmente à Magrão. Hoje define o negócio como um propósito, não apenas uma empresa.
+Contatos:
+
+Telefone: (21) 2413-4577
+WhatsApp: (21) 99419-8051
+Endereço: Estr. Rio São Paulo, 1634 - Campo Grande, Rio de Janeiro - RJ, 23087-005
+Horário: Seg a Sex 08h–18h / Sab 08h–14h / Dom e feriados: Fechado
+
+Bairros atendidos: Campo Grande, Cosmos, Paciência, Bangu, Santa Cruz, Guaratiba, Santíssimo
+Links:
+
+Site atual: magraoautocenter.com.br
+Instagram: https://www.instagram.com/magraoautocenterrj/
+Facebook: https://www.facebook.com/magraoautocenterrj/
+Google Business: https://share.google/ftbJvimRiAIhSMimZ
+Maps embed (regular): disponível no formulário
+Maps embed (tour virtual): disponível no formulário
+
+Instagram atual: @magraoautocenterrj — 503 posts / 1.141 seguidores / Feed bem trabalhado com conteúdo de serviços, datas comemorativas e identidade visual vermelha consistente.
+
+3 — AVALIAÇÕES
+Plataforma: Google
+Total de avaliações: 327
+Nota média: ⭐ 4.4
+
+Jaderson rayhni — Local Guide · 352 aval · 670 fotos — 8 meses atrás — ⭐⭐⭐⭐⭐
+Então, atendimento 5 estrelas, instalações 5 estrelas, ambiente limpo, tranquilo, fiz cambagem (80 cada lado) e alinhamento com "promoção deles (venda casada)" 200 tudo. Serviço bom, não tenho do que reclamar, o mecânico me chamou mostrou o que estava fazendo, as coisas que tenho que fazer futuramente, gostei do atendimento em forma geral. Cafezinho padrão! Rs. Provavelmente volto pra fazer outras coisas...
+Diogo Ferreira do Nascimento — Local Guide · 11 aval · 4 fotos — 6 meses atrás — ⭐⭐⭐⭐⭐
+Serviço completo desde a troca dos pneus até à geometria. 2 revisões como garantia.
+Jamile Ferreira — Local Guide · 90 aval · 141 fotos — 8 meses atrás — ⭐⭐⭐⭐⭐
+Fomos muito bem atendidos desde a chegada. A Sra Carmem foi muito gentil e atenciosa. Não será apenas mais um serviço prestado, mas a relação de confiança estabelecida foi fundamental para continuarmos utilizando os serviços dessa oficina. O rapaz que realizou o serviço explicou tudo e nos deu um orçamento justo. Com certeza voltaremos.
+MR Almeida — Local Guide · 70 aval · 122 fotos — 3 anos atrás — ⭐⭐⭐⭐⭐
+Fui pra fazer um segundo orçamento de troca de fluído de freio e pastilhas, menor preço, mecânico e elevador disponível, peças no estoque... Resultado, fiz logo o serviço atraído pelo ótimo atendimento inicial, com certeza ganhou um cliente.
+Everton Nascimento — Local Guide · 15 aval — 11 meses atrás — ⭐⭐⭐⭐⭐
+Fui muito bem atendido pela Sra. Cláudia. Os funcionários fizeram um bom trabalho. Recomendo para quem precisar.
+Felipe Cury — Local Guide · 34 aval · 31 fotos — 9 meses atrás — ⭐⭐⭐⭐⭐
+Ótimo atendimento, honestidade e transparência nos serviços. Recomendo!
+Jorcelene Lucia — 2 aval — um ano atrás — ⭐⭐⭐⭐⭐
+Adoreiiiiiiii o atendimento, todos são ótimos profissionais. Ótimos preços. Uma observação, tem uma senhora chamada Dona Cláudia que é uma pessoa excelente, tem uma conversa agradável, o Rafael fez um serviço no meu carro que fiquei muito feliz com o resultado.. Super índico, vocês estão de parabéns.
+Bizu Automotivo — Local Guide · 43 aval · 20 fotos — 4 anos atrás — ⭐⭐⭐⭐⭐
+Excelência no serviço de auto center e suspensão. Se quiser pequenos serviços de elétrica é só procurar o amigo Helinho. Excelente profissional.
+Leonardo Costa — Local Guide · 62 aval · 20 fotos — Editado um ano atrás — ⭐⭐⭐⭐⭐
+Um lugar onde somos tratados muito bem. O Rafael e toda equipe cuidam do carro como se fosse dele.
+Dorimar Felix — Local Guide · 17 aval · 1 foto — 2 anos atrás — ⭐⭐⭐⭐⭐
+Fui nessa semana (27.09.2023), gostei da honestidade, atendimento, respeito... não ficam inventando defeitos. Parabéns aos profissionais (Srs. Marcos e Rafael). Quanto ao bom funcionamento do carro, vamos aguardar um pouco, está recente o serviço realizado. 👏👏
+
+4 — ANÁLISE DE BRANDING
+Nicho: Oficina Mecânica / Auto Center — Zona Oeste, Rio de Janeiro
+Posicionamento: Médio-popular com aspiração de confiança premium — não é a mais barata nem a mais cara; vende pela reputação de honestidade e pelo diferencial do atendimento feminino humanizado.
+Estilo visual predominante identificado nas mídias:
+Mecânico Bold Urbano — letreiro vermelho dominante, ambiente industrial organizado e limpo, equipe uniformizada em preto. A identidade atual já é forte no ponto físico; o site deve elevar essa força para o digital sem perder a autenticidade de bairro.
+Paleta de cores recomendada:
+NomeHexUsoVermelho Magrão#C41230Cor principal, CTAs, acentos, números de serviçosPreto Carvão#1A1A1AFundo escuro, navbar, seções alternadasGrafite#2E2E2EFundo secundário, cards, seção dor/soluçãoOff-White#F5F5F5Texto sobre fundo escuro, fundos de seções clarasÂmbar Acento#F0A500Estrelas de avaliação, badges de destaque, chamadas de atençãoVermelho Claro#FF1E42Hover states, gradientes
+Direção estética: Industrial-Acolhedor. Galpão com alma. Vermelho enérgico que transmite confiança técnica, preto que dá seriedade, e a narrativa da equipe feminina que suaviza e humaniza a comunicação. Sem remetismo de oficina suja — limpo, organizado, forte.
+Sensação de marca: "Eu confio aqui. Me explicaram tudo. O preço foi justo. A Carmem é incrível." — fidelidade emocional, não apenas transacional.
+Referências de empresas premium do mesmo nicho:
+
+Midas (Brasil) — padronização visual, vermelho forte, transmissão de confiança
+Pneustore — site limpo com destaque nos produtos
+Firestone — vermelho e preto, linguagem direta, destaque em qualidade técnica
+
+Observação estratégica de mídias: Com 24 vídeos disponíveis e 10 fotos, o site deve priorizar seções que consumam vídeos (hero em loop, galeria de vídeos/ambiente, seção de serviços com background em vídeo). As fotos reais dos produtos (Havoline), da fachada e da equipe são ativos visuais de alta autenticidade — usar com prioridade sobre imagens de banco.
+
+5 — CHECKLIST DE PENDÊNCIAS
+🔴 MÍDIAS AUSENTES:
+
+ Foto individual/institucional da proprietária Cláudia (para seção Sobre)
+ Foto de cada mecânico individualmente ou em ação nos serviços
+ Foto do interior da área de espera/recepção com cliente atendido
+ Foto de close nos equipamentos de alinhamento 3D e balanceamento
+ Foto de antes/depois de algum serviço (roda, pneu, suspensão)
+ Thumbnail ou foto específica para cada categoria de serviço principal
+ Vídeo tour completo da oficina (os 24 vídeos precisam ser triados e curados)
+
+🟡 CONTATOS / INFORMAÇÕES AUSENTES:
+
+ E-mail de contato (não foi informado)
+ Número do telefone fixo antigo (3402-5835) — confirmar se ainda está ativo ou substituído pelo 2413-4577
+ Aceita quais formas de pagamento? (cartão, PIX, dinheiro, parcelamento?)
+ Tem estacionamento próprio? (relevante para o site)
+ Tem serviço de busca e entrega do veículo?
+
+🟡 LINKS / DOCUMENTAÇÃO AUSENTES:
+
+ LinkedIn da empresa (não informado)
+ YouTube/canal de vídeos (considerando a quantidade de vídeos produzidos)
+ Google Business verificado — link de avaliação disponível ✅ (mas confirmar se está ativo)
+ CNPJ informado ✅ — Alvará sanitário/municipal não informado
+
+🟢 DISPONÍVEIS E PRONTOS:
+
+✅ Maps embed regular
+✅ Maps embed Tour Virtual Google
+✅ Link Google Business
+✅ Link avaliação Google
+✅ Instagram e Facebook
+
+
+6 — ANÁLISE DE REFERÊNCIAS WEBFLOW
+TEMPLATE 1 — Mechanic 128
+URL analisada: https://mechanic-128.webflow.io/ | https://webflow.com/templates/html/mechanic-128-cars-website-template
+HERO:
+Proporção aproximada 100% fullscreen. Fundo escuro (#0D0D0D) com imagem de mecânico em trabalho em sobreposição semitransparente. Título centralizado à esquerda em tipografia condensed sans-serif, bold, tamanho ~6–7vw. Elemento diferenciador: logo da empresa no canto superior esquerdo transparente que vira opaco ao scroll, subtítulo em peso regular abaixo do H1, CTA único em vermelho sólido. Abaixo do hero, faixa com logos de parceiros/marcas em marquee suave.
+NAV:
+Navbar transparente no topo, sem background. Ao scroll de ~80px, transiciona para fundo escuro sólido com shadow suave em 300ms ease. Hover nos links: sublinhado animado da esquerda para direita com cor vermelha. CTA no canto direito em botão vermelho preenchido.
+TIPOGRAFIA:
+Títulos em família condensed grotesca (similar a Barlow Condensed ou Oswald), peso 700–800, tamanhos ~5–7vw em desktop. Corpo em sans-serif moderna (similar a Inter), peso 400, tamanho ~1rem. Uso criativo: numeração de serviços em tipografia muito grande (~8–10rem) em cor vermelha semitransparente como elemento decorativo de fundo.
+CORES (branding aplicável à Magrão):
+
+#C41230 como cor primária de CTAs e destaques
+#1A1A1A como fundo dark
+#F5F5F5 como texto claro
+#F0A500 como acento para estrelas e badges
+
+SERVIÇOS/CARDS:
+Grid 3 colunas em desktop com numeração 01, 02, 03 em tamanho grande. Cada card contém: número grande, ícone SVG, título, descrição curta, link "Read More". Espaçamento generoso, sem bordas — separação por espaço branco. Em mobile: coluna única. Fundo dos cards levemente mais claro que o fundo da seção (#1F1F1F sobre #141414).
+ANIMAÇÕES (formato técnico):
+
+H1 hero → translateY(50px) opacidade 0 para translateY(0) opacidade 1 em 800ms, easing: ease-out, trigger: page load, delay: 200ms
+Subtexto hero → translateY(30px) opacidade 0 para estado final em 600ms, easing: ease-out, trigger: load, delay: 450ms
+CTA hero → opacidade 0 para 1 em 400ms, trigger: load, delay: 700ms
+Cards de serviço → translateY(30px) opacidade 0 para estado final em 500ms, easing: ease-out, trigger: IntersectionObserver threshold 0.15, stagger: 100ms por card
+Número grande (01, 02…) → scale(1.05) para scale(1) em 700ms, trigger: IntersectionObserver
+Navbar → background-color transparent para #1A1A1A em 300ms, trigger: scroll > 80px
+
+MICRO-INTERAÇÕES:
+
+Hover nos cards de serviço: borda esquerda em vermelho aparece com translateX(-2px) em 200ms, background clareia levemente
+Hover no CTA: background escurece 10%, leve scale(1.02) em 150ms
+Hover nos links da nav: cor muda para vermelho + underline de esquerda para direita em 200ms
+
+ELEMENTOS DECORATIVOS:
+
+Linha vermelha fina diagonal cruzando o hero como elemento gráfico sutil
+Círculo grande desfocado em vermelho com opacidade 5% no background do hero
+Ícones SVG minimalistas de peças automotivas nos cards de serviço
+
+RESUMO CONSTRUTIVO:
+Recriar o estilo Mechanic 128 significa partir de um fundo quase preto (#1A1A1A), aplicar o vermelho #C41230 como única cor de acento visível, usar Barlow Condensed bold em tamanhos generosos para os títulos, e estruturar os serviços com a numeração grande como âncora visual. O hero deve ter um vídeo em loop com overlay escuro a 65% de opacidade, garantindo legibilidade do texto sem esconder a ação. A navbar deve ser absolutamente transparente na home e transicionar suavemente para escuro ao scroll — esse detalhe só já posiciona o site acima da média do nicho local.
+
+TEMPLATE 2 — CarRepair X (BRIX Templates)
+URL analisada: https://carrepairtemplate.webflow.io/home-pages/home-v1 | https://webflow.com/templates/html/carrepair-x-automotive-website-template
+HERO:
+Proporção fullscreen (100vh). Layout assimétrico sutil: texto no lado esquerdo ocupando ~55% da largura; lado direito com imagem de carro ou mecânico em ação. Badge ou pill no topo do texto ("Car repair", "Auto Service") em cor de destaque pequena. H1 em ~7–8vw, bold condensed. Dois CTAs lado a lado — primário preenchido, secundário outline. Fundo: dark ou muito claro (template tem variações light e dark).
+NAV:
+Sticky com background escuro desde o início (não transparente). Logo à esquerda com texto complementar. Links centralizados ou à direita. Ícone de carrinho (loja) no extremo direito. Hover nos links: sublinhado animado. CTA "Get Started" em vermelho no canto direito.
+TIPOGRAFIA:
+Família grotesca moderna (similar a Plus Jakarta Sans ou DM Sans), peso 700 nos títulos, 400 no corpo. Tamanho do H1: ~7vw. Badge acima do H1 em uppercase, tamanho pequeno (~0.75rem), com fundo colorido pill. Muito uso de espaçamento generoso entre seções.
+CORES (branding aplicável à Magrão):
+
+#C41230 para CTAs e badges
+#1A1A1A fundo principal dark
+#FFFFFF texto e contraste
+#F0A500 estrelas e elementos de destaque
+
+SERVIÇOS/CARDS:
+Lista numerada vertical com imagem à direita de cada serviço. 6 serviços mostrados na home em formato de lista: número grande + título + descrição + link "learn more". A imagem de cada serviço aparece ao lado. Alternância: par tem imagem à direita, ímpar à esquerda (zig-zag sutil). Em mobile: empilhado verticalmente, imagem acima do texto.
+ANIMAÇÕES (formato técnico):
+
+Badge/pill do hero → opacidade 0 + translateY(-10px) para estado final em 300ms, trigger: load, delay: 100ms
+H1 hero → opacidade 0 + translateX(-30px) para estado final em 700ms, easing: cubic-bezier(0.25, 0.46, 0.45, 0.94), trigger: load, delay: 300ms
+Parágrafo hero → opacidade 0 para 1 em 500ms, trigger: load, delay: 550ms
+CTAs do hero → opacidade 0 + translateY(15px) para estado final, stagger: 150ms entre primário e secundário, trigger: load, delay: 700ms
+Cards de serviço → opacidade 0 + translateX(alternado: -20px / +20px) para estado final em 500ms, trigger: IntersectionObserver threshold 0.2, stagger: 80ms
+Imagens dos serviços → leve parallax: translateY(-15px) ao scroll (via IntersectionObserver ratio)
+Seção de depoimentos → cards com opacidade 0 + scale(0.97) para estado final em 400ms, stagger: 100ms
+
+MICRO-INTERAÇÕES:
+
+Hover nos cards de serviço: imagem tem zoom leve (scale 1.03) em 300ms, título muda para vermelho
+Hover CTA primário: background escurece + leve translateY(-2px) simulando "levantamento"
+Hover CTA secundário: borda e texto mudam para vermelho preenchido em 200ms
+
+ELEMENTOS DECORATIVOS:
+
+Linha horizontal fina em vermelho separando navbar do restante
+Formas geométricas em baixa opacidade (triângulos, retas diagonais) em seções de transição
+Gradiente sutil no fundo do hero: do preto puro para grafite escuro em diagonal
+
+RESUMO CONSTRUTIVO:
+O estilo CarRepair X se constrói em cima de um layout ordenado e limpo no dark. Para recriar: usar grid CSS com o texto do hero alinhado à esquerda, pill badge acima do H1 em vermelho com borda radius 100px, H1 em Barlow Condensed 8vw. A seção de serviços deve usar CSS Grid com grid-template-columns: 60px 1fr 40% — número grande na primeira coluna, texto no meio, imagem do serviço na terceira. As animações de entrada devem ser leves e suaves (nada de bounce ou elastic), sempre com easing cubic-bezier elegante. O diferencial deste template para a Magrão é a forma como a numeração organiza visualmente uma lista longa de serviços — perfeito para os +25 serviços do portfólio.
+
+7 — SISTEMA DE VARIAÇÃO DE LAYOUT
+Escolhas registradas — justificativa baseada no nicho, mídias disponíveis e branding:
+HERO — [X] D) Vídeo loop + texto com máscara de cor
+→ Justificativa: 24 vídeos disponíveis sobre ambiente, produtos e equipamentos da oficina. Usar vídeo real no hero é o diferencial máximo de autenticidade. Overlay vermelho diagonal esquerdo cria máscara de cor da identidade sem esconder o vídeo.
+SERVIÇOS — [X] F) Numeração grande (01, 02, 03) como elemento visual
+→ Justificativa: Com +25 serviços no portfólio, a numeração organiza sem sobrecarregar. Os números em 8rem vermelho semitransparente criam hierarquia visual e remetem à precisão técnica/mecânica.
+DEPOIMENTOS — [X] A) Marquee infinito horizontal
+→ Justificativa: 327 avaliações no Google com 4.4 estrelas é um ativo enorme de credibilidade. O marquee permite mostrar múltiplos depoimentos de forma contínua e energética, combinando com o logo oficial do Google para chancela.
+SOBRE / CREDENCIAIS — [X] D) Split 50/50 com imagem fixada
+→ Justificativa: A história de Cláudia é o coração emocional da marca. Foto da equipe fixada à esquerda + narrativa + 4 counters animados (19 anos / 327 avaliações / +25 serviços / Atendimento feminino) à direita criam o equilíbrio perfeito entre emoção e credibilidade técnica.

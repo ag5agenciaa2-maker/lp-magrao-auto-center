@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow AI bots (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://www.magraoautocenter.com.br/sitemap.xml

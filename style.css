@@ -1194,7 +1194,7 @@ body.no-scroll { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   gap: 2.5rem;
-  animation: marqueeScroll 22s linear infinite;
+  animation: marqueeScroll 55s linear infinite;
 }
 
 .marquee-bar:hover .marquee-track { animation-play-state: paused; }
@@ -2321,7 +2321,7 @@ body.no-scroll { overflow: hidden; }
   display: flex;
   gap: 1.25rem;
   width: max-content;
-  animation: marqueeDep 32s linear infinite;
+  animation: marqueeDep 80s linear infinite;
 }
 
 .marquee-depoimentos:hover .marquee-track-dep { animation-play-state: paused; }

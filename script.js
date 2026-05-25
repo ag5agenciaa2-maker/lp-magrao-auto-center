@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mensagemUsuario = mensagem.value.trim();
 
     const partes = [
-      'Olá, Magrão Auto Center! Gostaria de solicitar um orçamento.',
+      'Olá, vim através do site e gostaria de solicitar um orçamento.',
       '',
       `Nome: ${nome.value.trim()}`,
       `Telefone: ${telefone.value.trim()}`,

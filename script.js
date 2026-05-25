@@ -207,21 +207,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Mapa de servicos: value do select -> rotulo legivel para a mensagem
+  const servicoLabels = {
+    'alinhamento': 'Alinhamento 3D',
+    'balanceamento': 'Balanceamento',
+    'oleo': 'Troca de Óleo',
+    'embreagem': 'Embreagem',
+    'pneus': 'Pneus',
+    'suspensao': 'Suspensão',
+    'fluido': 'Fluido do Câmbio',
+    'vans-bongos': 'Vans e Bongos',
+    'outro': 'Outro'
+  };
+
+  // Numero oficial do WhatsApp da loja
+  const WHATSAPP_NUMERO = '5521994198051';
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (validateAll()) {
-      // Simula envio
-      const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      btn.textContent = 'Enviando...';
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = 'Solicitar agendamento';
-        form.reset();
-        formSuccess.classList.add('is-visible');
-        setTimeout(() => formSuccess.classList.remove('is-visible'), 5000);
-      }, 1200);
+    if (!validateAll()) return;
+
+    const servicoLabel = servicoLabels[servico.value] || servico.value;
+    const mensagemUsuario = mensagem.value.trim();
+
+    const partes = [
+      'Olá, Magrão Auto Center! Gostaria de solicitar um orçamento.',
+      '',
+      `Nome: ${nome.value.trim()}`,
+      `Telefone: ${telefone.value.trim()}`,
+      `Serviço: ${servicoLabel}`
+    ];
+    if (mensagemUsuario) {
+      partes.push(`Detalhes: ${mensagemUsuario}`);
     }
+
+    const texto = encodeURIComponent(partes.join('\n'));
+    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${texto}`;
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Abrindo WhatsApp...';
+
+    formSuccess.classList.add('is-visible');
+    window.open(url, '_blank', 'noopener,noreferrer');
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = 'Solicitar agendamento via WhatsApp';
+      form.reset();
+      setTimeout(() => formSuccess.classList.remove('is-visible'), 4000);
+    }, 800);
   });
 
   // =========================================
